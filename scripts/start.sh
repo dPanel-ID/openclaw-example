@@ -11,4 +11,4 @@ export OPENCLAW_TELEGRAM_BOT_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"
 
 # ./node_modules/.bin/openclaw setup
 
-./node_modules/.bin/openclaw gateway --port ${PORT} --allow-unconfigured --bind auto --auth token --token "${OPENCLAW_GATEWAY_TOKEN}"
+./node_modules/.bin/openclaw gateway --port ${PORT} --auth token --token "${OPENCLAW_GATEWAY_TOKEN}"
