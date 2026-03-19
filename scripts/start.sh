@@ -16,4 +16,7 @@ export OPENCLAW_CONFIG_PATH="config.json"
 # export OPENCLAW_GATEWAY_TOKEN="YOUR-OPENCLAW-TOKEN-HERE"
 # export OPENCLAW_TELEGRAM_BOT_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"
 
+# This is common variable used for OpenAI API calls, we set it from dPanel environment variables.
+export OPENAI_API_KEY=${OPENCLAW_OPENAI_API_KEY}
+
 ./node_modules/.bin/openclaw gateway --auth token --token "${OPENCLAW_GATEWAY_TOKEN}" --port ${PORT}
