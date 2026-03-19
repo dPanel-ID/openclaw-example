@@ -4,6 +4,35 @@ Focus on the `gateway` section of the configuration file. The gateway is respons
 
 If you have another proxy or load balancer in front of the gateway, you can add its IP address or CIDR range to the `trustedProxies` list. This is important for security, as it ensures that only trusted sources can access the gateway.
 
+## Deploying
+
+To deploy this example, it requires a dPanel account and a VPS (server) registered and set up. The deployment process involves creating an application on dPanel and linking it to your VPS (server). Follow the instructions below to complete the deployment:
+
+#### 1. Go to application list and click on "Add more" button.
+
+<img src="./assets/step-1.png" width="100%" />
+
+#### 2. Select from github and find the repository
+
+<img src="./assets/step-2.png" width="100%" />
+
+#### 3. Fill the application details and and select the server you want to deploy on.
+
+<img src="./assets/step-3.png" width="100%" />
+
+#### 4. Set environment variables for the application if needed.
+
+<img src="./assets/step-4.png" width="100%" />
+
+#### 5. Preview the configuration and click on "Deploy" button to start the deployment process.
+
+<img src="./assets/step-5.png" width="100%" />
+
+## Expose Web UI
+
+To expose, you can create Load Balancer on dPanel and point it to the application you just deployed. This will give you a public URL that you can use to access the web UI of the gateway.
+
+Detail on how to create Load Balancer "Coming Soon!".
 
 ## References
 
