@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export PORT="8000"
-
 export OPENCLAW_HOME="./.openclaw"
 export OPENCLAW_STATE_DIR="$OPENCLAW_HOME/state"
 export OPENCLAW_CONFIG_PATH="config.json"
