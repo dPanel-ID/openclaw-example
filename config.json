@@ -43,7 +43,6 @@
     },
     "gateway": {
         "mode": "remote",
-        "bind": "custom",
         "controlUi": {
             "allowedOrigins": [
                 "*"
