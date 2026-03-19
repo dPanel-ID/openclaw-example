@@ -51,7 +51,8 @@
             "allowedOrigins": [
                 "*"
             ],
-            "allowInsecureAuth": true
+            "allowInsecureAuth": true,
+            "dangerouslyDisableDeviceAuth": true
         }
     },
     "skills": {

@@ -9,6 +9,4 @@ export OPENCLAW_OPENAI_API_KEY="YOUR-OPENAI-TOKEN-HERE"
 export OPENCLAW_GATEWAY_TOKEN="YOUR-OPENCLAW-TOKEN-HERE"
 export OPENCLAW_TELEGRAM_BOT_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"
 
-# ./node_modules/.bin/openclaw setup
-
-./node_modules/.bin/openclaw gateway --port ${PORT} --auth token --token "${OPENCLAW_GATEWAY_TOKEN}"
+./node_modules/.bin/openclaw gateway --auth token --token "${OPENCLAW_GATEWAY_TOKEN}"
