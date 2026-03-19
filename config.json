@@ -42,7 +42,7 @@
         }
     },
     "gateway": {
-        "mode": "remote",
+        "mode": "local",
         "controlUi": {
             "allowedOrigins": [
                 "*"
