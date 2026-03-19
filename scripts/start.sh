@@ -8,4 +8,4 @@ export OPENCLAW_CONFIG_PATH="$OPENCLAW_HOME/config.json"
 
 ./node_modules/.bin/openclaw setup
 
-./node_modules/.bin/openclaw gateway --port 18789
+./node_modules/.bin/openclaw gateway --port ${PORT}
