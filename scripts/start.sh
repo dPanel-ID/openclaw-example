@@ -2,10 +2,9 @@
 
 export OPENCLAW_HOME="./.openclaw"
 export OPENCLAW_STATE_DIR="$OPENCLAW_HOME/state"
-export OPENCLAW_CONFIG_PATH="$OPENCLAW_HOME/config.json"
+export OPENCLAW_CONFIG_PATH="config.json"
 
-# export OPENCLAW_TELEGRAM_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"
+export OPENCLAW_TOKEN="YOUR-OPENCLAW-TOKEN-HERE"
+export OPENCLAW_TELEGRAM_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"
 
-./node_modules/.bin/openclaw setup
-
-./node_modules/.bin/openclaw gateway --port ${PORT}
+./node_modules/.bin/openclaw gateway --port ${PORT} --allow-unconfigured --bind auto --auth token --token "${OPENCLAW_TOKEN}"
