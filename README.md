@@ -20,9 +20,18 @@ To deploy this example, it requires a dPanel account and a VPS (server) register
 
 <img src="./assets/step-3.png" width="100%" />
 
-#### 4. Set environment variables for the application if needed.
+#### 4. Set environment variables for the application.
+
+Environment variables are used to configure OpenClaw to connect to OpenAI and other services. This repository only uses 2 features, OpenAI as LLM and Telegram as channel. Therefore, you need to set the following environment variables:
+```sh
+OPENCLAW_OPENAI_API_KEY=YOUR-OPENAI-TOKEN-HERE
+OPENCLAW_TELEGRAM_BOT_TOKEN=YOUR-TELEGRAM-BOT-TOKEN-HERE
+OPENCLAW_GATEWAY_TOKEN=YOUR-OPENCLAW-GATEWAY-TOKEN-HERE
+```
 
 <img src="./assets/step-4.png" width="100%" />
+
+You can explore more environment variables to enable more features and customize the behavior. Refer to OpenClaw documentation for more details. And edit file  [`config.json`](./config.json) to add more configuration.
 
 #### 5. Preview the configuration and click on "Deploy" button to start the deployment process.
 
