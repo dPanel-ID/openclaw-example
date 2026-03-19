@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/dPanel-ID/openclaw-example#readme",
   "dependencies": {
-    "openclaw": "^2026.3.13"
+    "openclaw": "2026.3.13"
   }
 }
