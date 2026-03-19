@@ -16,4 +16,4 @@ export OPENCLAW_CONFIG_PATH="config.json"
 # export OPENCLAW_GATEWAY_TOKEN="YOUR-OPENCLAW-TOKEN-HERE"
 # export OPENCLAW_TELEGRAM_BOT_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"
 
-./node_modules/.bin/openclaw gateway --auth token --token "${OPENCLAW_GATEWAY_TOKEN}"
+./node_modules/.bin/openclaw gateway --auth token --token "${OPENCLAW_GATEWAY_TOKEN}" --port ${PORT}
