@@ -37,7 +37,7 @@
                 "provider": "default",
                 "id": "OPENCLAW_TELEGRAM_BOT_TOKEN"
             },
-            "groupPolicy": "allowlist",
+            "groupPolicy": "open",
             "streaming": "partial"
         }
     },
