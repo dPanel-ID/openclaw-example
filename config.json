@@ -43,6 +43,10 @@
     },
     "gateway": {
         "mode": "local",
+        "trustedProxies": [
+            "127.0.0.1",
+            "::1"
+        ],
         "controlUi": {
             "allowedOrigins": [
                 "*"
