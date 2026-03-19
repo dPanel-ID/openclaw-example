@@ -42,7 +42,8 @@
         }
     },
     "gateway": {
-        "bind": "loopback",
+        "mode": "remote",
+        "bind": "custom",
         "controlUi": {
             "allowedOrigins": [
                 "*"
