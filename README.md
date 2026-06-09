@@ -1,53 +1,43 @@
-## Configuration
+# Description
 
-Focus on the `gateway` section of the configuration file. The gateway is responsible for handling incoming requests and routing them to the appropriate skills. This example is configured to run in "local" mode, which means it will only accept requests from the local machine. The `trustedProxies` setting allows you to specify which IP addresses are allowed to send requests to the gateway. In this example, we allow requests from `127.0.0.1` and `::1` (IPv6 loopback address).
+Running OpenClaw with custom model. We use K2Think as base model.
 
-If you have another proxy or load balancer in front of the gateway, you can add its IP address or CIDR range to the `trustedProxies` list. This is important for security, as it ensures that only trusted sources can access the gateway.
+This setup uses the IFM Model API with:
 
-## Deploying
+- Model: `MBZUAI-IFM/K2-Think-v2`
+- Base URL: `https://api.k2think.ai`
+- Chat endpoint: `/v1/chat/completions`
+- Authentication: `Authorization: Bearer <API_KEY>` (mapped from `OPENCLAW_OPENAI_API_KEY`)
 
-To deploy this example, it requires a dPanel account and a VPS (server) registered and set up. The deployment process involves creating an application on dPanel and linking it to your VPS (server). Follow the instructions below to complete the deployment:
+K2 Think v2 is positioned for advanced reasoning tasks such as coding, math, and complex problem solving.
 
-#### 1. Go to application list and click on "Add more" button.
+Based on IFM docs defaults, keep these in mind for planning usage:
 
-<img src="./assets/step-1.png" width="100%" />
+- Rate limit: 30 requests/minute (unless approved otherwise)
+- Concurrency: 10 concurrent requests (unless approved otherwise)
+- Max request tokens: 65536 (unless approved otherwise)
 
-#### 2. Select from github and find the repository
+# How To Use
 
-<img src="./assets/step-2.png" width="100%" />
+1. Run:
 
-#### 3. Fill the application details and and select the server you want to deploy on.
-
-<img src="./assets/step-3.png" width="100%" />
-
-#### 4. Set environment variables for the application.
-
-Environment variables are used to configure OpenClaw to connect to OpenAI and other services. This repository only uses 2 features, OpenAI as LLM and Telegram as channel. Therefore, you need to set the following environment variables:
 ```sh
-OPENCLAW_OPENAI_API_KEY=YOUR-OPENAI-TOKEN-HERE
-OPENCLAW_TELEGRAM_BOT_TOKEN=YOUR-TELEGRAM-BOT-TOKEN-HERE
-OPENCLAW_GATEWAY_TOKEN=YOUR-OPENCLAW-GATEWAY-TOKEN-HERE
+./scripts/build.sh
 ```
 
-<img src="./assets/step-4.png" width="100%" />
+2. Set environment variables:
 
-You can explore more environment variables to enable more features and customize the behavior. Refer to OpenClaw documentation for more details. And edit file  [`config.json`](./config.json) to add more configuration.
+```sh
+export PORT=3000
+export OPENCLAW_OPENAI_API_KEY="your-k2think-token" # get token from https://platform.ifm.ai/
+export OPENCLAW_GATEWAY_TOKEN="any-random-string"
+export OPENCLAW_TELEGRAM_BOT_TOKEN="telegram-token"
+```
 
-#### 5. Preview the configuration and click on "Deploy" button to start the deployment process.
+3. Run:
 
-<img src="./assets/step-5.png" width="100%" />
+```sh
+./scripts/start.sh
+```
 
-## Expose Web UI
-
-To expose, you can create Load Balancer on dPanel and point it to the application you just deployed. This will give you a public URL that you can use to access the web UI of the gateway.
-
-Detail on how to create Load Balancer "Coming Soon!".
-
-## References
-
-- [Channel Messaging](https://docs.openclaw.ai/channels)
-- [Linux Systemd](https://docs.openclaw.ai/platforms/linux#system-control-systemd-user-unit)
-- [Security](https://docs.openclaw.ai/gateway/security)
-- [Web Tools](https://docs.openclaw.ai/tools/web)
-- [Non Interactive Onboard](https://docs.openclaw.ai/cli/onboard)
-- [Trusted Proxy](https://docs.openclaw.ai/gateway/trusted-proxy-auth)
+4. Start chat with your bot from Telegram.

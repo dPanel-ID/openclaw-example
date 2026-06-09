@@ -12,6 +12,7 @@ export OPENCLAW_CONFIG_PATH="config.json"
 # instead you can set them in the dPanel UI when creating application. 
 # It will secure your tokens and avoid potential security risks of exposing them in repository.
 
+# export PORT=3000
 # export OPENCLAW_OPENAI_API_KEY="YOUR-OPENAI-TOKEN-HERE"
 # export OPENCLAW_GATEWAY_TOKEN="YOUR-OPENCLAW-TOKEN-HERE"
 # export OPENCLAW_TELEGRAM_BOT_TOKEN="YOUR-TELEGRAM-TOKEN-HERE"

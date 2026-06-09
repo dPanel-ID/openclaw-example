@@ -2,3 +2,5 @@ node_modules/
 .openclaw/
 *.bak*
 .DS_Store
+config.json.last-good
+start-dev.sh
