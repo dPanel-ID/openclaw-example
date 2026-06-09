@@ -1,19 +1,16 @@
 {
     "meta": {
-        "lastTouchedVersion": "2026.3.13",
+        "lastTouchedVersion": "2026.6.1",
         "lastTouchedAt": "2026-03-19T06:23:39.057Z"
     },
     "agents": {
         "defaults": {
             "model": {
-                "primary": "openai/gpt-5.1-codex"
+                "primary": "k2/MBZUAI-IFM/K2-Think-v2"
             },
             "models": {
-                "anthropic/claude-sonnet-4-5": {
-                    "alias": "Sonnet"
-                },
-                "openai/gpt-5.1-codex": {
-                    "alias": "GPT"
+                "k2/MBZUAI-IFM/K2-Think-v2": {
+                    "alias": "K2 Think v2"
                 }
             },
             "workspace": "./.openclaw/.openclaw/workspace",
@@ -39,7 +36,9 @@
                 "id": "OPENCLAW_TELEGRAM_BOT_TOKEN"
             },
             "groupPolicy": "open",
-            "streaming": "partial"
+            "streaming": {
+                "mode": "partial"
+            }
         }
     },
     "gateway": {
@@ -67,6 +66,34 @@
         "entries": {
             "telegram": {
                 "enabled": true
+            }
+        }
+    },
+    "models": {
+        "mode": "merge",
+        "providers": {
+            "k2": {
+                "baseUrl": "https://api.k2think.ai/v1",
+                "apiKey": {
+                    "source": "env",
+                    "provider": "default",
+                    "id": "OPENCLAW_OPENAI_API_KEY"
+                },
+                "api": "openai-completions",
+                "models": [
+                    {
+                        "id": "MBZUAI-IFM/K2-Think-v2",
+                        "name": "MBZUAI-IFM/K2-Think-v2",
+                        "reasoning": false,
+                        "compat": {
+                            "requiresStringContent": true,
+                            "supportsStore": false,
+                            "supportsStrictMode": false,
+                            "supportsReasoningEffort": false,
+                            "supportsUsageInStreaming": false
+                        }
+                    }
+                ]
             }
         }
     }
