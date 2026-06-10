@@ -29,7 +29,9 @@
         "telegram": {
             "enabled": true,
             "dmPolicy": "open",
-            "allowFrom": ["*"],
+            "allowFrom": [
+                "*"
+            ],
             "botToken": {
                 "source": "env",
                 "provider": "default",
@@ -43,6 +45,14 @@
     },
     "gateway": {
         "mode": "local",
+        "auth": {
+            "mode": "token",
+            "token": {
+                "source": "env",
+                "provider": "default",
+                "id": "OPENCLAW_GATEWAY_TOKEN"
+            }
+        },
         "trustedProxies": [
             "127.0.0.1",
             "::1"
@@ -53,6 +63,16 @@
             ],
             "allowInsecureAuth": true,
             "dangerouslyDisableDeviceAuth": true
+        }
+    },
+    "tools": {
+        "elevated": {
+            "enabled": true,
+            "allowFrom": {
+                "telegram": [
+                    "*"
+                ]
+            }
         }
     },
     "skills": {
